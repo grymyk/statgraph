@@ -1,7 +1,98 @@
-@font-face {
-  font-family: 'Inter';
-  src: url('../fonts/Inter.ttf');
-}
-
-@import 'variables';
-@import 'scaffolding';
+html, body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+  h1, h2, h3 {
+    padding: 0;
+  }
+  
+  h1 {
+    margin: 20px 0 0;
+    text-transform: uppercase;
+  }
+  
+  h2 {
+    margin: 15px 0 0;
+    text-transform: uppercase;
+  }
+  
+  h3 {
+    margin: 30px 0 0;
+    text-transform: uppercase;
+  }
+  
+  #canvas_holder {
+    margin: 0 auto;
+    width: 320px;
+  }
+  
+  #plot {
+    border: 2px solid #000;
+    font-size: 24px;
+    margin: 20px 0 0;
+    height: 48px;
+    width: 144px;
+  }
+  
+  #plot:hover {
+    background: rgba(221, 221, 221, 0.5);
+    cursor: pointer;
+  }
+  
+  .footer {
+    margin: 40px 20px 0;
+    text-align: right;
+  
+    a {
+      color: #000;
+  
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+  
+  #sizer {
+    margin: 10px auto 0;
+    padding: 0;
+    text-align: center;
+    width: 139px;
+  
+    input {
+        border: none;
+        cursor: pointer;
+        margin: 0;
+        padding: 0;
+    }
+  }
+  
+  #input_range_holder {
+    background: #fff;
+  }
+  
+  #output_holder {
+    margin: 0 auto;
+    width: 129px;
+  
+    output {
+      font-size: 18px;
+      margin: 0;
+      padding: 0;
+    }
+  }
+  
+  #input_holder {
+    font-size: 14px;
+    margin: 0;
+    overflow: hidden;
+  
+    .begin {
+      float: left;
+    }
+  
+    .end {
+      float: right;
+    }
+  }

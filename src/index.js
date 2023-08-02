@@ -1,26 +1,37 @@
-// Test import of a JavaScript module
-import { example } from '@/js/example'
-
-// Test import of an asset
-import webpackLogo from '@/images/webpack-logo.svg'
-
-// Test import of styles
 import '@/styles/index.scss'
 
-// Appending to the DOM
-const logo = document.createElement('img')
-logo.src = webpackLogo
+import { Stats } from "@/js/stats.js";
 
-const heading = document.createElement('h1')
-heading.textContent = example()
+const config = {
+    min: 0,
+    // max: 10
+};
 
-// Test a background image url in CSS
-const imageBackground = document.createElement('div')
-imageBackground.classList.add('image')
+let size = 50;
 
-// Test a public folder asset
-const imagePublic = document.createElement('img')
-imagePublic.src = '/assets/example.png'
+const stats = new Stats(config);
 
-const app = document.querySelector('#root')
-app.append(logo, heading, imageBackground, imagePublic)
+function inputHandler(event) {
+    let numberN = +event.target.value;
+    output.innerHTML = numberN;
+    size = numberN;
+
+    handlerClick(size);
+}
+
+const sizer = document.getElementById('sizer');
+const output = sizer.getElementsByTagName('output')[0];
+
+sizer.addEventListener('input', inputHandler);
+
+function handlerClick(size) {
+    const data = stats.randomData(size);
+
+    stats.plot(data);
+    stats.average(data);
+    stats.dispersion(data);
+}
+
+window.onload = () => handlerClick(size);
+
+handlerClick(size);
